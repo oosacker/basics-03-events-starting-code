@@ -23,9 +23,16 @@
       <p>Result: {{ counter }}</p>
       <p v-once>Original val: {{ counter }}</p>
       <hr>
+
+      <input type="text" v-model="name" />
+      <h3>Name: {{ fullname }}</h3>
+      <hr>
+
       <input type="text" v-model="text" />
+      <button @click=resetText()>Reset</button>
       <h3>Text: {{ text }}</h3>
       <hr>
+
       <input type="text" 
         @input="setName($event, 'test')" 
         @keyup.enter="setConfirmedName()" 
@@ -33,10 +40,12 @@
       <h3>Name: {{ name }}</h3>
       <h3>ConfirmedName: {{ confirmedName }}</h3>
       <hr>
+
       <form action="" @submit.prevent="submit">
         <input type="text" />
         <button>Click</button>
       </form>
+
     </section>
   </body>
 </html>

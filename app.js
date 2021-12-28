@@ -7,6 +7,19 @@ const app = Vue.createApp({
       confirmedName: ''
     };
   },
+
+  computed: {
+    fullname() {
+      return this.name ? `${this.name} Hasegawa` : '';
+    }
+  },
+
+  watch: {
+    name(value) {
+      console.log(`name was changed to: ${value}!`);
+    }
+  },
+
   methods: {
     increment() {
       this.counter++;
@@ -22,6 +35,9 @@ const app = Vue.createApp({
     },
     submit() {
       console.log('submit form!!')
+    },
+    resetText() {
+      this.text = ''
     }
   }
 });
